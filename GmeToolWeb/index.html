@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>S92Tool</title>
+    <link rel="stylesheet" type="text/css" href="./styles/S92ToolStyles.css">  
+  </head>
+
+  
+  
+  <body>
+    <div class="gird-container">
+      <div class="gird-header">
+        <h2>GME Tool Temp</h2>
+      </div>
+      <div class="AMMRevArea">
+        <label>AMM版本：<br>
+          <input type="text" class="inputText" id="AMM" >
+        </label>
+      </div>
+      <div class="EMMRevArea">
+        <label>EMM版本：<br>
+          <input type="text" class="inputText" id="EMM" >
+        </label>
+        
+      </div>
+      <div class="craftArea">
+        <label>选择机型:<br>
+          <select id="craftModel" onchange="changeAircraft()">
+            <option value="S92" selected>S92</option>
+            <option value="S76C">S76C</option>
+          </select>
+        </label> 
+      </div>
+      <div class="projectAera">
+        <label>定检项目：<br>
+          <select id="selectProject"></select>
+        </label>
+      </div>
+      <div class="dateArea">
+        <label>工作日期：<br>
+          <input type="date" class="inputText" id="dateSelect">
+        </label>
+      
+      </div>
+      <div class="flightTimeArea">
+        <label>机身时间：<br>
+          <input type="text" class="inputText" id="FuselageTime">
+        </label>
+      </div>
+      <div class="generateButtonArea">
+        <button id="buttonGenerate">生成</button> 
+      </div>
+      <div class="copyButtonArea">
+        <button id="buttonCopy" >复制文本</button> 
+      </div>
+      <div class="textYJArea">
+        <textarea id="textYj" cols="20" rows="3" ></textarea>
+      </div>
+
+      <div class="stickyWorkerArea">
+        <h2>员工号：</h2>
+        <table border="1" id="skickyTable">
+          <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>员工号</th>
+          </tr>
+          <tbody id="sticky-tb">
+            <tr id="sticky-tr"></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="clearWorkerBtnDiv">
+        <input type="button" id="clearWorkerbutton" onclick="clearWorkerTable()" value="清空列表" >
+      </div>
+      <div class="FindWorkerArea">
+        <div id="searchBox" >
+          <h2>搜索员工号：</h2>
+          <input type="search" id="WorkerSearch" placeholder="搜索" oninput="oninputSearch()">
+        </div>
+  
+        <div id="containTable">
+          <table border="1" id="WorkerTable">
+            <tr>
+              <th>序号</th>
+              <th>姓名</th>
+              <th>员工号</th>
+            </tr>
+            <tbody id="tb"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="logArea">
+        <label>Log:<br>
+          <input type="text" class="textLog" id="logIputText" width:420px value="test">
+        </label>
+      </div>
+    </div>
+
+  </body>
+
+  <script type="text/javascript" src="./scripts/S92Tool.js"></script>
+
+</html>
