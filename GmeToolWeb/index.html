@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>S92Tool</title>
+    <!-- <link rel="stylesheet" href="./styles/styles.css"> -->
     <link rel="stylesheet" type="text/css" href="./styles/S92ToolStyles.css">  
   </head>
 
@@ -62,18 +63,22 @@
         <h2>员工号：</h2>
         <table border="1" id="skickyTable">
           <tr>
+            <td></td>
+            <td><input type="button" id="clearWorkerbutton" onclick="clearWorkerTable()" value="清空列表" ></td>
+            <td><input type="button" id="saveList"  value="缓存名单" ></td>
+          </tr>
+          <tr>
             <th>序号</th>
             <th>姓名</th>
             <th>员工号</th>
           </tr>
-          <tbody id="sticky-tb">
-            <tr id="sticky-tr"></tr>
-          </tbody>
+          <tbody id="stickyTb"></tbody>
         </table>
       </div>
-      <div class="clearWorkerBtnDiv">
+      <!-- <div class="clearWorkerBtnDiv">
         <input type="button" id="clearWorkerbutton" onclick="clearWorkerTable()" value="清空列表" >
-      </div>
+        <input type="button" id="saveList"  value="缓存名单" >
+      </div> -->
       <div class="FindWorkerArea">
         <div id="searchBox" >
           <h2>搜索员工号：</h2>
@@ -96,9 +101,21 @@
           <input type="text" class="textLog" id="logIputText" width:420px value="test">
         </label>
       </div>
+      <div class="contactDiv">
+        <span>&#9992  https://tools.csgac.cc/FlightHourCalc/</span>
+        <br/>
+        <span>&#9993  hubinz@csair.com</span>
+      </div>
     </div>
 
+
+
   </body>
+  <script type="text/javascript" src="./scripts/AMM-EMM.js"></script>
+  <script type="text/javascript" src="./scripts/S92Project.js"></script>
+  <script type="text/javascript" src="./scripts/S76Project.js"></script>
+  <script type="text/javascript" src="./scripts/WorkerCode.js"></script>
+
 
   <script type="text/javascript" src="./scripts/S92Tool.js"></script>
 
