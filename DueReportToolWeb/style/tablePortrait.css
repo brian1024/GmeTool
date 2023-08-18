@@ -1,0 +1,113 @@
+#showDataBox{
+
+    /* background-color:rgb(10, 121, 93); */
+    background-color:rgb(248, 237, 225);
+    width:1100px;
+    /* width:1600px; */
+    /* margin-left: 20px; */
+    padding: 10px 10px 50px 10px;
+
+    /* width:100%-20px; */
+    /* min-width: 1120px;
+    max-width: 1600px; */
+    border-radius: 10px;
+}
+
+
+
+#showDataBox table{
+    /* font-size: 30px; */
+    border-collapse:collapse;
+    /* border:3px solid darkgreen; */
+    /* padding:10px; */
+    /* margin-bottom:20px; */
+    margin:10px 10px 20px 10px;
+
+    /* font-family:Arial,Microsoft JhengHei; */
+    /* font-family:Arial, Helvetica, sans-serif; */
+    table-layout:fixed;
+    /* word-break:break-all; */
+    /* word-wrap:break-word; */
+    /* margin: 10px 10px 10px 10px; */
+    /* border-radius: 20px; */
+}
+
+
+/* #workList{
+    border:1px solid black;
+} */
+
+/* -----------------------------------------------------表格处理-------------------------------------------------- */
+#DataExportedTimeBox{
+    font-size: 30px;
+    padding-left: 20px;
+}
+
+/* ------ 表头 ------ */
+#showDataBox table thead tr th{
+    /* background-color: #c6f6e6; */
+    background-color:#1fa176;
+    padding:10px 10px 10px 20px;
+    border: 3px solid #ccc;
+}
+
+#showDataBox table thead tr th:nth-child(1){
+    font-weight: bold;
+    font-size: 50px;
+    /* text-justify: left; */
+    text-align: left;
+}
+
+#showDataBox table thead tr th{
+    text-align: left;
+}
+#showDataBox table thead tr th:nth-child(2) span{
+    /* font-weight: bold; */
+    font-size: 24px;
+}
+#showDataBox table thead tr th:nth-child(2) div{
+    font-weight: bold;
+    font-size: 32px;
+}
+
+/* ------ 表格主体 ------ */
+#tbodyMenuHead td{
+    font-size: 36px;
+}
+
+#showDataBox table tbody tr:nth-child(even) {
+    background-color:#dfe8e1;
+}
+
+#showDataBox table tbody tr:nth-child(odd) {
+    background-color:#efe8fa;
+}
+
+#showDataBox table tbody tr td{
+    border:3px solid #ccc;
+    padding:10px 10px 10px 20px;
+    word-wrap:break-word;
+}
+
+.tdColA{
+    /* background-color:lightcoral; */
+    width: 680px;
+    /* font-weight:500; */
+    font-size: 36px;
+}
+.tdColB{
+    /* background-color:lightcoral; */
+    width: 200px;
+    font-size: 36px;
+}
+.tdColC{
+    /* background-color:lightcoral; */
+    width: 200px;
+    font-size: 36px;
+
+}
+.tdColD{
+    /* background-color:lightcoral; */
+    width: 160px;
+    font-size: 24px;
+}

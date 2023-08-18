@@ -1,0 +1,667 @@
+.gridBox{
+    display:grid;
+    grid-template-columns:20px 240px 1fr 240px 20px;
+    grid-template-rows:50px 50px 50px 50px 50px 1fr 100px 100px;
+    grid-gap: 10px;
+    
+}
+
+.toolNameBox{
+    grid-column: 2/4;
+    grid-row: 1/2;
+    justify-self: center;
+    align-self: center;
+    /* background-color: darkslategray;  */
+    /* margin-bottom: 20px; */
+
+} 
+
+
+
+
+/* ---------------------------------ButtonBox-------------------------------------- */
+
+.buttonBox{
+    grid-column: 3/4;
+    grid-row: 2/4;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-rows:1fr;
+    justify-self: center; 
+    grid-gap: 0px;
+    padding: 0px;
+
+    width:100%;
+    height:100%;
+    background-color:blanchedalmond;
+    border-radius: 10px;
+}
+
+
+#inputFileBox{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    justify-self: center;
+    align-self: center;
+    box-shadow: 2px 5px 5px #000;
+}
+
+
+#inputFileBox{
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    background-color:#9cf;
+    color:#fff;
+    text-align:center;  
+    -web-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    padding:10px 30px;
+    font-size:26px;
+    /* font-family:Arial,Microsoft JhengHei; */
+    border:1px outset black;
+    justify-self: start;
+    margin-left: 20px;
+}
+#file_upload{
+    position: absolute;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    top: 0;
+    right: 0;
+    width:100%;
+    height:100%;
+
+}
+ #inputFileBox img{
+    content:url(data:image/png;base64,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);
+    padding-right:5px;  
+    vertical-align: text-bottom;
+}
+ 
+
+#generateButtonBox{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    justify-self: start;
+    align-self: center;
+    margin-left: 20px;
+
+}
+
+#generateReportButton{
+    width:240px;
+    height:70px;
+    background-color:#9cf;
+    border-radius: 10px;
+    font-size:26px;
+    /* font-family:Arial,Microsoft JhengHei; */
+    color:#fff;
+    /* box-shadow:0px; */
+    border:1px outset black;
+    box-shadow: 2px 5px 5px #000;
+}
+
+
+
+
+#copyTableButtonBox{
+    grid-column: 3/4;
+    grid-row: 1/2;
+    justify-self: start;
+    align-self: center;
+    margin-left: 20px;
+}
+
+#copyTableButton{
+    width:240px;
+    height:70px;
+    background-color:#9cf;
+    border-radius: 10px;
+    font-size:26px;
+    /* font-family:Arial,Microsoft JhengHei; */
+    color:#fff;
+    border:1px outset black;
+    box-shadow: 2px 5px 5px #000;
+}
+
+#copyPictureButtonBox{
+    grid-column: 4/5;
+    grid-row: 1/2;
+    justify-self: start;
+    align-self: center;
+    margin-left: 20px;
+}
+#copyPictureButton{
+    width:240px;
+    height:70px;
+    background-color:#9cf;
+    border-radius: 10px;
+    font-size:26px;
+    /* font-family:Arial,Microsoft JhengHei; */
+    color:#fff;
+    border:1px outset black;
+}
+
+#inputFileBox:hover{
+    background-color: rgb(15, 137, 173);
+    box-shadow: 8px 10px 10px #000;
+}
+#inputFileBox:active{
+    background-color: rgb(2, 76, 99);
+    box-shadow: 8px 10px 10px #000;
+}
+
+#generateReportButton:hover{
+    background-color: rgb(15, 137, 173);
+    box-shadow: 8px 10px 10px #000;
+}
+#generateReportButton:active{
+    background-color: rgb(2, 76, 99);
+    box-shadow: 8px 10px 10px #000;
+}
+
+
+#copyTableButton:hover{
+    background-color: rgb(15, 137, 173);
+    box-shadow: 8px 10px 10px #000;
+}
+#copyTableButton:active{
+    background-color: rgb(2, 76, 99);
+    box-shadow: 8px 10px 10px #000;
+}
+
+#copyPictureButton:hover{
+    background-color: rgb(15, 137, 173);
+    box-shadow: 8px 10px 10px #000;
+}
+#copyPictureButton:active{
+    background-color: rgb(2, 76, 99);
+    box-shadow: 8px 10px 10px #000;
+}
+
+
+
+#testButton{
+    grid-column: 4/5;
+    grid-row: 2/4;
+    height:50px;
+    width:200px;
+    align-self: center;
+    justify-self: center;
+}
+
+
+/* ---------------------------------tempBox----------------------- */
+
+.tempBox{
+    grid-column: 4/-2;
+    grid-row: 2/4;
+    /* background-color:blanchedalmond; */
+    width:100%;
+    height:100%;
+}
+
+
+
+
+
+
+/* ------------------------------------SelectAirCraftBox-------------------------- */
+
+#selectAircraftBox{
+    grid-column: 2/3;
+    grid-row: 2/7;
+    /* justify-self: center;
+    align-self: end; */
+    background-color:wheat; 
+    width:100%;
+    height:100%;
+    border-radius: 10px;
+
+}
+#selectAircraftBox .selectAircraft{
+    /* padding: 20px; */
+    
+    justify-self:center;
+    text-align: start;
+    /* background-color:darkseagreen; */
+    width:200px;
+    margin: 20px 20px;
+    /* font-size: 20px; */
+    border-collapse:collapse;
+}
+#selectAircraftBox .selectAircraft tr td{
+    padding:2px 10px 2px 10px;
+    font-size:20px;
+    border:2px solid #422626;
+}
+
+.configCheckbox{
+    width:35px;
+    height:35px;
+}
+
+.checkboxAircraftList{
+    width:30px;
+    height:30px;
+}
+
+
+.contactBox{
+    padding-left: 10px;
+    grid-column: 2/3;
+    grid-row: 7/8;
+}
+
+
+
+/* ------------------ Utility Box -----------------*/
+#utilityDivBox{
+    grid-column: 4/5;
+    grid-row: 2/7;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 600px 100px 1fr;
+    background-color:wheat;
+    border-radius: 10px;
+    padding:5px;
+
+}
+
+
+/* ---------------------------------ConfigBox----------------------- */
+
+#configBox{
+    grid-column: 1;
+    grid-row: 1/2;
+    /* background-color:wheat;  */
+    /* width:100%;
+    height:100%; */
+    width:240px;
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows:repeat(12,50px) 1fr;
+    grid-gap: 0px;
+    /* align-items: center; */
+    border-radius: 10px;
+    max-height: 900px;
+    /* background-color:lightsalmon; */
+    
+}
+
+.configLogoNameBox{
+    grid-column:1;
+    grid-row:1/2;
+    padding-left: 20px;
+}
+.configLogoNameBox h2{
+    margin: 10px;
+    /* color:rgb(59, 122, 80); */
+}
+
+
+
+
+
+#utilityDivBox .configBoxItemBox{
+    
+    /* background-color: red; */
+    padding-left: 5px;
+    align-self: center;
+    /* border:1px solid black; */
+    width:225px;
+    background-color: rgb(243, 240, 200);
+    border-radius: 10px;
+    box-shadow: 2px 5px 5px #000;
+}
+
+#configBox div{
+
+    font-size: 20px;
+    
+}
+
+#configBox div .configControlBox{
+    padding-top:10px;
+    /* padding-left:36px; */
+    padding-left: 25px;
+}
+
+#configBox div div span{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+#setlistNumInputBox{
+    grid-column:1;
+    grid-row:2/4;
+    justify-self: start;
+    align-self:center;
+    /* padding: 10px 10px 10px 42px; */
+}
+.setListinputNum{
+    border-top: solid 1px #eaeaea; 
+    border-bottom: solid 1px #eaeaea; 
+    height: 32px; 
+    width:60px; 
+    color: #333333; 
+    /* margin-left:-8px;  */
+    text-align: center; 
+    /* background: transparent; */
+    border: 0px;
+    /* margin-left: -3px; */
+    font-size: 20px;
+
+}
+
+#setListNum::-webkit-inner-spin-button { 
+    -webkit-appearance: none; 
+}
+#setListNum::-webkit-outer-spin-button {
+    -webkit-appearance: none;	/* 有无看不出差别 */
+}
+
+
+
+#setListNumMinusButton:hover{
+    background-color: lightgreen;
+}
+
+
+#setListNumPlusButton:hover{
+    background-color: lightgreen;
+}
+
+.setListNumButton{
+    width: 35px; 
+    height: 35px; 
+    text-align: center;
+    border: solid 1px #eaeaea; 
+    background: #f5f5f5;
+    color: #9e9e9e;
+    font-size: 20px;
+}
+
+
+
+
+#lineNumCheckboxDivBox{
+    grid-column:1;
+    grid-row:4/6;
+    justify-self: start;
+    /* padding: 20px; */
+    /* padding: 10px 10px 10px 20px; */
+    /* display: inline-block; */
+    /* background-color: lightcoral; */
+
+}
+#lineNumCheckboxDivBox label{
+    font-size: 20px;
+}
+
+/* #lineNumCheckbox{
+
+    width:36px;
+    height:36px;
+    vertical-align: middle;
+} */
+
+.switchInput{
+    /* padding-left: 30px; */
+    vertical-align: middle;
+    margin: 10px;
+    width: 100px;
+    height: 31px;
+    position: relative;
+    border: 1px solid #dfdfdf;
+    background-color: #fdfdfd;
+    box-shadow: #dfdfdf 0 0 0 0 inset;
+    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-clip: content-box;
+    display: inline-block;
+    -webkit-appearance: none;
+    user-select: none;
+    outline: none; }
+    .switchInput:before {
+      content: '';
+      width: 29px;
+      height: 29px;
+      position: absolute;
+      top: 0px;
+      left: 0;
+      border-radius: 20px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      background-color: #fff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); }
+      .switchInput:checked {
+      border-color: #64bd63;
+      box-shadow: #64bd63 0 0 0 16px inset;
+      background-color: #64bd63; }
+      .switchInput:checked:before {
+
+        left: 68px; }
+  
+
+
+#tableStyleInputDivBox{
+    grid-column:1;
+    grid-row:10/12;
+    justify-self: start;
+    /* padding: 20px; */
+    /* padding: 10px 10px 10px 20px; */
+    
+}
+
+#tableStyleInputDivBox label{
+    font-size: 20px;
+}
+
+
+
+
+#setDueFHInputBox{
+    grid-column:1;
+    grid-row:6/8;
+    justify-self: start;
+}
+
+#setDueFHNum::-webkit-inner-spin-button { 
+    -webkit-appearance: none; 
+}
+#setDueFHNum::-webkit-outer-spin-button {
+    -webkit-appearance: none;	/* 有无看不出差别 */
+}
+
+#setDueFHMinusButton:hover{
+    background-color: lightgreen;
+}
+
+#setDueFHPlusButton:hover{
+    background-color: lightgreen;
+}
+
+#setDueDayInputBox{
+    grid-column:1;
+    grid-row:8/10;
+    justify-self: start;
+}
+#setDueDayNum::-webkit-inner-spin-button { 
+    -webkit-appearance: none; 
+}
+#setDueDayNum::-webkit-outer-spin-button {
+    -webkit-appearance: none;	/* 有无看不出差别 */
+}
+
+#setDueDayMinusButton:hover{
+    background-color: lightgreen;
+}
+
+#setDueDayPlusButton:hover{
+    background-color: lightgreen;
+}
+
+
+#logTextareaDivBox{
+    grid-column:1;
+    grid-row:2/3;
+    /* margin-left: 10px; */
+    font-size: 20px;
+}
+#logTextarea{
+    width:120px;
+    height:40px;
+    vertical-align: middle;
+}
+
+#showMeBox{
+    grid-column:1;
+    grid-row:3/4;
+    font-size: 20px;
+}
+
+
+
+
+/* ---------------------------------------- Show Data -------------------------------------------- */
+
+#dataDivBox{
+    grid-column: 3/4;
+    grid-row: 4/7;
+    background-color:rgb(248, 237, 225);
+    min-height: 600px;
+    border-radius: 10px;
+}
+
+#showDataBox{
+
+    /* background-color:rgb(10, 121, 93); */
+    background-color:rgb(248, 237, 225);
+    width:1100px;
+    /* width:1600px; */
+    /* margin-left: 20px; */
+    padding: 10px 10px 50px 10px;
+
+    /* width:100%-20px; */
+    /* min-width: 1120px;
+    max-width: 1600px; */
+    border-radius: 10px;
+}
+
+
+
+#showDataBox table{
+    /* font-size: 30px; */
+    border-collapse:collapse;
+    /* border:3px solid darkgreen; */
+    /* padding:10px; */
+    /* margin-bottom:20px; */
+    margin:10px 10px 20px 10px;
+
+    /* font-family:Arial,Microsoft JhengHei; */
+    /* font-family:Arial, Helvetica, sans-serif; */
+    table-layout:fixed;
+    /* word-break:break-all; */
+    /* word-wrap:break-word; */
+    /* margin: 10px 10px 10px 10px; */
+    /* border-radius: 20px; */
+}
+
+
+/* #workList{
+    border:1px solid black;
+} */
+
+/* -----------------------------------------------------表格处理-------------------------------------------------- */
+#DataExportedTimeBox{
+    font-size: 30px;
+    padding-left: 20px;
+}
+
+/* ------ 表头 ------ */
+#showDataBox table thead tr th{
+    /* background-color: #c6f6e6; */
+    background-color:#1fa176;
+    padding:10px 10px 10px 20px;
+    border: 3px solid #ccc;
+}
+
+#showDataBox table thead tr th:nth-child(1){
+    font-weight: bold;
+    font-size: 50px;
+    /* text-justify: left; */
+    text-align: left;
+}
+
+#showDataBox table thead tr th{
+    text-align: left;
+}
+#showDataBox table thead tr th:nth-child(2) span{
+    /* font-weight: bold; */
+    font-size: 24px;
+}
+#showDataBox table thead tr th:nth-child(2) div{
+    font-weight: bold;
+    font-size: 32px;
+}
+
+/* ------ 表格主体 ------ */
+#tbodyMenuHead td{
+    font-size: 36px;
+}
+
+#showDataBox table tbody tr:nth-child(even) {
+    background-color:#dfe8e1;
+}
+
+#showDataBox table tbody tr:nth-child(odd) {
+    background-color:#efe8fa;
+}
+
+#showDataBox table tbody tr td{
+    border:3px solid #ccc;
+    padding:10px 10px 10px 20px;
+    word-wrap:break-word;
+}
+
+.tdColA{
+    /* background-color:lightcoral; */
+    width: 680px;
+    /* font-weight:500; */
+    font-size: 36px;
+}
+.tdColB{
+    /* background-color:lightcoral; */
+    width: 200px;
+    font-size: 36px;
+}
+.tdColC{
+    /* background-color:lightcoral; */
+    width: 200px;
+    font-size: 36px;
+
+}
+.tdColD{
+    /* background-color:lightcoral; */
+    width: 160px;
+    font-size: 24px;
+}
+
+
+
+
+
+/* ---------------------------------------------- 图片区域 ------------------ */
+#showPic{
+    grid-column: 3/4;
+    grid-row: 7/8;
+}

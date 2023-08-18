@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <title>Due Report Tool
+    </title> 
+    <link rel="icon" href="./image/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./style/index.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./style/tableLandscape.css"> -->
+    
+  </head>
+  <body>
+    <div class="gridBox">
+
+      <div class="toolNameBox">
+        <h1>GME Due Report Tool</h1>
+      </div>
+
+      <div class="buttonBox">
+        <div id="inputFileBox">
+          <img />
+          <span>导入文件</span>
+          <input type="file" id="file_upload" accept=".xls"/>
+        </div>
+        <div id="generateButtonBox">
+          <input type="button" value="生成表格" id="generateReportButton" />
+        </div>
+        <div id="copyTableButtonBox">
+          <input type="button" value="生成图片" id="copyTableButton" />
+        </div>
+        <!-- <div id="copyPictureButtonBox">
+          <input type="button" value="复制图片" id="copyPictureButton" />
+        </div> -->
+      </div>
+
+      <div class="tempBox"></div>
+
+
+
+      <div id="selectAircraftBox">
+        <table class="selectAircraft" border="1">
+          <thead>
+            <tr>            
+              <td>选择飞机号</td>
+            </tr>
+          </thead>
+          
+          <tbody id="selectAircraftTable">
+
+          </tbody>
+        </table>
+      </div>
+
+      <div id="dataDivBox">
+        <div id="showDataBox">
+          <!-- <table border="1" id="workList">
+          </table> -->
+        </div>
+      </div>
+
+      <div id="utilityDivBox">
+        <div id="configBox">
+          <div class="configLogoNameBox">
+            <h2>配置面板</h2>
+          </div>
+
+          <div id="setlistNumInputBox" class="configBoxItemBox">
+            <div id="setListNumLabelBox">
+              <label>&#10148 展示数据条数 : </label>    
+            </div>
+            <div class="configControlBox">
+              <input type="button" class="setListNumButton" id="setListNumMinusButton" value="-" />
+              <input type="number" class="setListinputNum" id="setListNum" value="12" />
+              <input type="button" class="setListNumButton" id="setListNumPlusButton" value="+" />
+              <span>条</span>
+            </div>
+            
+          </div>
+  
+          <div id="lineNumCheckboxDivBox" class="configBoxItemBox">
+            <div>
+              <label>&#10148 展示 LINE 号 : </label>
+            </div>
+            <div class="configControlBox">
+              <span>关</span><input type="checkbox" class="switchInput" id="lineNumCheckbox" /><span>开</span>
+            </div>
+          </div>
+
+          <div id="setDueFHInputBox" class="configBoxItemBox">
+            <div>
+              <label>&#10148 标识 FH 设置 : </label>
+            </div>
+            <div class="configControlBox">
+              <input type="button" class="setListNumButton" id="setDueFHMinusButton" value="-" />
+              <input type="number" class="setListinputNum" id="setDueFHNum" value="6" />
+              <input type="button" class="setListNumButton" id="setDueFHPlusButton" value="+" />
+              <span>FH</span>
+            </div>
+          </div>
+
+          <div id="setDueDayInputBox" class="configBoxItemBox">
+            <div> 
+              <label>&#10148 标识 Days 设置 : </label>
+            </div>
+            <div class="configControlBox">
+              <input type="button" class="setListNumButton" id="setDueDayMinusButton" value="-" />
+              <input type="number" class="setListinputNum" id="setDueDayNum" value="3" />
+              <input type="button" class="setListNumButton" id="setDueDayPlusButton" value="+" />
+              <span>天</span>
+            </div>
+          </div> 
+          <div id="tableStyleInputDivBox" class="configBoxItemBox">
+            <div>
+              <label>&#10148 表格样式: </label>
+            </div>
+            <div class="configControlBox">
+              <span>竖</span><input type="checkbox" class="switchInput" id="tableStyleSwitch" /><span>横</span>
+            </div>
+          </div>
+
+        
+        </div>
+
+        <div id="logTextareaDivBox" class="configBoxItemBox">
+            <label>
+              &#10148 Log: <textarea id="logTextarea"></textarea>
+            </label>
+        </div>
+          
+        <div class="contactBox" id="showMeBox">
+          <span>&#9992  S92.Tech</span>
+          <br/>
+          <span>&#9993  hubinz@csair.com</span>
+        </div>
+  
+
+      </div>
+      <div id="showPic"></div>
+
+      <!-- <input type="button" id="testButton" value="testButton" /> -->
+    </div>
+    
+    <link rel="stylesheet" type="text/css" id="DataTableStyle" href="./style/tablePortrait.css">
+
+    <script src="./script/dom-to-image.min.js"></script>
+    <script src="./script/xlsx.full.min.js"></script>
+    <script src="./script/config.js"></script>
+
+    <script src="./script/DueReportTool.js"></script> 
+  </body>
+</html>
